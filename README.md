@@ -108,20 +108,50 @@ This project introduces a **high-fidelity, non-contact pulse estimation system**
 
 ---
 
-## 🚧 Limitations
+## 🚧 Additional Difficulties Encountered
 
-- FFT resolution can be sensitive to short signals or head movement
-- Lucas-Kanade assumes brightness constancy, and can degrade under strong lighting changes
-- Rhythm Index may fluctuate under very low signal-to-noise ratios
+One significant challenge during development was the **interaction between visualization resolution and signal fidelity**. Initially, to enhance real-time performance, the video was downscaled to smaller dimensions. However, this reduced the **pixel-wise motion granularity**, which is critical for optical flow-based motion tracking. As a result, the **subtle spatial displacements** that indicate pulse activity became imperceptible. This led to:
+- A nearly **flat signal trace**
+- Abnormally **high BPM estimates**
+- **No dominant frequency** in FFT analysis
+
+**Resolution**:  
+To address this, motion tracking computations were restored to the **original full-resolution video**, preserving pixel-level detail. Meanwhile, visualizations such as **live waveform overlays** and **spider-web mesh trackers** were applied to a **scaled-down copy of the frame**, striking a balance between **computational efficiency** and **signal fidelity**.
+
+Another major challenge was **real-time waveform generation** embedded into the output video. Frame-by-frame rendering using `matplotlib` was **computationally expensive**, demanding careful optimization of memory usage and rendering pipelines to avoid latency or freezes in the visualization stream.
 
 ---
 
-## 🚀 Future Directions
+## ✅ Conclusion and Future Work
 
-- Integrate **MediaPipe Holistic** or **OpenPose** for anatomical anchoring
-- Add **adaptive filters** and **real-time confidence scoring**
-- Expand to **multi-site tracking** (e.g., wrist, face)
-- Explore **deep learning-based motion magnification** for pulse amplification
+This system successfully achieves **accurate, markerless, and non-contact pulse tracking**, integrating real-time overlays, biomechanical mesh visualization, and live waveform plots. It provides a **visually interpretable and physiologically relevant monitoring solution**.
+
+### ⚠️ Limitations
+- **FFT sensitivity** to transient or non-periodic motion
+- **Lucas-Kanade optical flow** degrades under severe lighting changes
+- **Rhythm reliability** requires longer observation windows for clinical use
+
+---
+
+### 🔮 Future Directions
+
+- **Multi-scale Temporal Fusion**  
+  Introduce causal filters or attention-based temporal models to better isolate pulse-driven signals from external motion.
+
+- **Learning-Based Optical Flow**  
+  Replace Lucas-Kanade with DNNs like **RAFT** or **FlowNet2** for more robust tracking under complex lighting and backgrounds.
+
+- **Physiological Event Classification**  
+  Analyze extracted signals to detect patterns like **arrhythmia**, **bradycardia**, or signal irregularities using lightweight temporal CNNs or shallow classifiers.
+
+- **Confidence-Aware Visualization**  
+  Add overlays that show **confidence maps** based on motion variance, tracker consistency, and signal-to-noise estimates to improve interpretability.
+
+- **Cross-Region Synchrony Analysis**  
+  Expand the framework to track multiple regions (e.g., **neck + forehead**) to analyze **time delays** and infer vascular health metrics.
+
+- **Low-Power Deployment**  
+  Explore **ONNX**-based optimization and edge hardware deployment to enable **real-time inference on low-resource systems**.
 
 ---
 
