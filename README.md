@@ -50,7 +50,8 @@ This project introduces a **high-fidelity, non-contact pulse estimation system**
 
 ### 📈 Waveform Visualization
 
-![1](https://github.com/user-attachments/assets/f73642c4-22c6-482a-b963-247447cdbcf6)
+![1](https://github.com/user-attachments/assets/51e9c572-6a89-4490-a180-d756466e37af)
+
 
 
 - Blue curve = filtered and smoothed signal  
@@ -61,8 +62,7 @@ This project introduces a **high-fidelity, non-contact pulse estimation system**
 
 ### 🎧 Frequency Spectrum
 
-
-![2](https://github.com/user-attachments/assets/a84c5fbf-9dfc-429d-b000-3a177788913a)
+![2](https://github.com/user-attachments/assets/81818c2f-988e-4d4a-bd69-611bf63c36a3)
 
 - Dominant peak at ~2.3 Hz (~72 BPM)
 - Harmonics indicate slight periodic modulations or secondary motion components
@@ -71,7 +71,7 @@ This project introduces a **high-fidelity, non-contact pulse estimation system**
 
 ### 🧭 Tracker Motion (X/Y)
 
-![3](https://github.com/user-attachments/assets/cdf836b9-8ad7-4a28-863e-f3eb2d912fc7)
+![3](https://github.com/user-attachments/assets/b0011653-e106-4718-98c2-38b50d782636)
 
 - Low-frequency rhythmic displacement of tracker centroids
 - Biomechanical evidence of underlying pulse propagation
@@ -89,7 +89,7 @@ This project introduces a **high-fidelity, non-contact pulse estimation system**
 
 ### 🖼️ Final Visual Overlay Frame
 
-![nerve_motion_output](https://github.com/user-attachments/assets/f680e357-5f93-47c6-9cc8-7037cab73756)
+![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/b56c8670-eb0c-4490-95c0-3995782697f4)
 
 ![Screenshot (878)](https://github.com/user-attachments/assets/8856eb86-abe9-4eb3-a8bb-efd34bb59de9)
 
