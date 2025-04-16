@@ -129,17 +129,11 @@ This project introduces a **high-fidelity, non-contact pulse estimation system**
 
 | File                         | Description                                      |
 |------------------------------|--------------------------------------------------|
-| `final intensity waveform.png` | Motion waveform with peak annotations           |
-| `fft.png`                    | Frequency-domain profile                         |
-| `xy.png`                     | X and Y displacement plots of motion features    |
 | `heatmap.png`                | Full-duration cumulative motion heatmap          |
-| `over.png`                   | Final live annotated video frame                 |
+| `over.gif`                   | Final live annotated video frame                 |
 | `motion_heatmap_final.png`   | Saved final heatmap frame                        |
+| `Submission.pynb`            | Final Code Jupyter Notebook                      |
 | `live_motion_log.csv`        | Frame-wise data (intensity, peaks, XY coords)    |
 
----
 
-## 📑 Citation
-
-If you use this repository or build upon this pipeline, please consider citing the author or referencing this work as:
 
